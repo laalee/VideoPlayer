@@ -93,9 +93,21 @@ class ViewController: UIViewController {
                 self.setLabelColor(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
             }
         })
-        
+
         fullScreenButton.isSelected = !fullScreenButton.isSelected
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { context in
+            
+            self.avPlayerLayer.frame.size = self.videoView.frame.size
+        })
+    }
+    
+    
     
     @IBAction func searchUrl(_ sender: UIButton) {
         
@@ -104,10 +116,37 @@ class ViewController: UIViewController {
         guard let url = URL(string: urlString) else { return }
         
         avPlayerItem = AVPlayerItem(url: url)
+        
+        avPlayerItem.addObserver(self, forKeyPath: "status", options: .new, context: nil)
 
         avPlayer = AVPlayer(playerItem: avPlayerItem)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
-        playVideo(playButton)
+        guard let playerItem = object as? AVPlayerItem else { return }
+        
+        if keyPath == "status"{
+
+            if playerItem.status == AVPlayerItemStatus.readyToPlay {
+  
+                if !noVideoLabel.isHidden {
+                    
+                    timeSlider.value = 0
+                    
+                    playVideo(playButton)
+                    
+                    noVideoLabel.isHidden = true
+                }
+            } else if playerItem.status == AVPlayerItemStatus.failed {
+                
+                noVideoLabel.isHidden = false
+                
+            } else {
+                
+                print("Unknown error")
+            }
+        }
     }
     
     @IBAction func playVideo(_ sender: UIButton) {
@@ -116,7 +155,7 @@ class ViewController: UIViewController {
         
         avPlayerLayer = AVPlayerLayer(player: player)
         
-        avPlayerLayer.videoGravity = AVLayerVideoGravity.resize
+        avPlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
         avPlayerLayer.frame = videoView.layer.bounds
         
