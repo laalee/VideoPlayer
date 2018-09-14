@@ -54,6 +54,8 @@ class ViewController: UIViewController {
         searchButton.layer.borderWidth = 1
         searchButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         
+        setButtonTemplateImage()
+        
         timeSlider.value = 0
         
         caDisplayLink = CADisplayLink(target: self, selector: #selector(updateTimes))
@@ -260,28 +262,53 @@ class ViewController: UIViewController {
         UIView.setAnimationsEnabled(true)
     }
     
+    func setButtonTemplateImage() {
+        
+        var templateImage = #imageLiteral(resourceName: "btn_play").withRenderingMode(.alwaysTemplate)
+        playButton.setImage(templateImage, for: .normal)
+        
+        templateImage = #imageLiteral(resourceName: "btn_stop").withRenderingMode(.alwaysTemplate)
+        playButton.setImage(templateImage, for: .selected)
+        
+        templateImage = #imageLiteral(resourceName: "btn_play_rewind").withRenderingMode(.alwaysTemplate)
+        rewindButton.setImage(templateImage, for: .normal)
+        
+        templateImage = #imageLiteral(resourceName: "btn_play_forward").withRenderingMode(.alwaysTemplate)
+        forwardButton.setImage(templateImage, for: .normal)
+
+        templateImage = #imageLiteral(resourceName: "btn_volume_up").withRenderingMode(.alwaysTemplate)
+        muteButton.setImage(templateImage, for: .normal)
+        
+        templateImage = #imageLiteral(resourceName: "btn_volume_off").withRenderingMode(.alwaysTemplate)
+        muteButton.setImage(templateImage, for: .selected)
+
+        templateImage = #imageLiteral(resourceName: "btn_fullScreen").withRenderingMode(.alwaysTemplate)
+        fullScreenButton.setImage(templateImage, for: .normal)
+        
+        templateImage = #imageLiteral(resourceName: "btn_fullScreen_exit").withRenderingMode(.alwaysTemplate)
+        fullScreenButton.setImage(templateImage, for: .selected)
+        
+        setButtonColor(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+    }
+    
     func setButtonColor(with color: UIColor) {
         
-        let buttons: [UIButton] = [playButton, rewindButton, forwardButton, muteButton, fullScreenButton]
+        playButton.imageView?.tintColor = color
         
-        for button in buttons {
-            
-            let templateImage = button.imageView?.image?.withRenderingMode(.alwaysTemplate)
-            
-            button.imageView?.image = templateImage
-            
-            button.imageView?.tintColor = color
-        }
+        rewindButton.imageView?.tintColor = color
+        
+        forwardButton.imageView?.tintColor = color
+        
+        muteButton.imageView?.tintColor = color
+        
+        fullScreenButton.imageView?.tintColor = color
     }
     
     func setLabelColor(with color: UIColor) {
         
-        let labels: [UILabel] = [currentTimeLabel, totalTimeLabel]
+        currentTimeLabel.textColor = color
         
-        for label in labels {
-            
-            label.textColor = color
-        }
+        totalTimeLabel.textColor = color
     }
 
 }
