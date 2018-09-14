@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Add-4H-rN2">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,17 +16,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入欲播放影片網址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-uN-u6g">
-                                <rect key="frame" x="10" y="79" width="275" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://s3-ap-northeast-1.amazonaws.com/mid-exam/Video/taeyeon.mp4" borderStyle="roundedRect" placeholder="請輸入欲播放影片網址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-uN-u6g">
+                                <rect key="frame" x="10" y="79" width="314" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSj-A4-SmD">
-                                <rect key="frame" x="295" y="79" width="70" height="30"/>
+                                <rect key="frame" x="334" y="79" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="gJ1-k1-Vxw"/>
                                 </constraints>
@@ -42,24 +42,35 @@
                                     <action selector="searchUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W3y-gk-8t9"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oK9-Gi-qk5">
+                                <rect key="frame" x="0.0" y="251.66666666666669" width="414" height="232.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oK9-Gi-qk5" secondAttribute="height" multiplier="16:9" id="39l-V3-uI9"/>
+                                </constraints>
+                                <variation key="widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="39l-V3-uI9"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前尚無影片可播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J8-QY-Mc6">
-                                <rect key="frame" x="109" y="323" width="156" height="21"/>
+                                <rect key="frame" x="129" y="357.66666666666669" width="156" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-h1-adD">
-                                <rect key="frame" x="57" y="553" width="261" height="31"/>
+                                <rect key="frame" x="57" y="622" width="300" height="31"/>
                                 <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCh-wv-Dhj">
-                                <rect key="frame" x="10" y="560" width="39" height="17"/>
+                                <rect key="frame" x="10" y="629" width="39" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-JD-GMY">
-                                <rect key="frame" x="47.5" y="613" width="24" height="24"/>
+                                <rect key="frame" x="67" y="682" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="PQA-bX-1wU"/>
                                     <constraint firstAttribute="width" constant="24" id="TBs-ym-nCO"/>
@@ -71,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN4-n9-9TJ">
-                                <rect key="frame" x="111.5" y="613" width="24" height="24"/>
+                                <rect key="frame" x="131" y="682" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="P31-gw-XdS"/>
                                     <constraint firstAttribute="width" constant="24" id="zJ9-Gz-8fY"/>
@@ -82,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-jc-DU1">
-                                <rect key="frame" x="175.5" y="613" width="24" height="24"/>
+                                <rect key="frame" x="195" y="682" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="HRI-rA-2wx"/>
                                     <constraint firstAttribute="width" constant="24" id="I2V-7H-4yr"/>
@@ -94,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr5-4F-xbd">
-                                <rect key="frame" x="239.5" y="613" width="24" height="24"/>
+                                <rect key="frame" x="259" y="682" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Td1-99-TbE"/>
                                     <constraint firstAttribute="width" constant="24" id="V55-tG-OKP"/>
@@ -105,26 +116,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnA-61-nYC">
-                                <rect key="frame" x="303.5" y="613" width="24" height="24"/>
+                                <rect key="frame" x="323" y="682" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1Ij-p7-SYz"/>
                                     <constraint firstAttribute="height" constant="24" id="wSw-Pn-QuQ"/>
                                 </constraints>
                                 <state key="normal" image="btn_fullScreen"/>
                                 <state key="selected" image="btn_fullScreen_exit"/>
+                                <connections>
+                                    <action selector="switchOrientation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3d0-2n-j6B"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-CR-Q7D">
-                                <rect key="frame" x="326" y="560" width="39" height="17"/>
+                                <rect key="frame" x="365" y="629" width="39" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oK9-Gi-qk5">
-                                <rect key="frame" x="0.0" y="228" width="375" height="211"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oK9-Gi-qk5" secondAttribute="height" multiplier="16:9" id="39l-V3-uI9"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -139,29 +147,65 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oK9-Gi-qk5" secondAttribute="trailing" id="Mjq-SP-mt5"/>
                             <constraint firstItem="jnA-61-nYC" firstAttribute="leading" secondItem="vr5-4F-xbd" secondAttribute="trailing" constant="40" id="No6-ai-e3k"/>
                             <constraint firstItem="zCh-wv-Dhj" firstAttribute="centerY" secondItem="cnz-h1-adD" secondAttribute="centerY" id="OaF-In-Qax"/>
+                            <constraint firstItem="oK9-Gi-qk5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Qsa-Dg-YiL"/>
                             <constraint firstItem="3J8-QY-Mc6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y1i-7p-12d"/>
                             <constraint firstItem="hqr-jc-DU1" firstAttribute="top" secondItem="cnz-h1-adD" secondAttribute="bottom" constant="30" id="aHW-eB-AE9"/>
                             <constraint firstItem="hSj-A4-SmD" firstAttribute="leading" secondItem="Gwv-uN-u6g" secondAttribute="trailing" constant="10" id="as1-29-NKZ"/>
                             <constraint firstItem="LN4-n9-9TJ" firstAttribute="centerY" secondItem="hqr-jc-DU1" secondAttribute="centerY" id="bGF-pM-Tzp"/>
+                            <constraint firstItem="oK9-Gi-qk5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bu4-hv-KEv"/>
                             <constraint firstItem="hSj-A4-SmD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="eD3-g2-QN2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gjy-CR-Q7D" secondAttribute="trailing" constant="10" id="erN-Ex-UnZ"/>
+                            <constraint firstItem="hqr-jc-DU1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="i7p-al-1lI"/>
                             <constraint firstItem="Gwv-uN-u6g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="kIV-CH-jVJ"/>
                             <constraint firstItem="HdN-JD-GMY" firstAttribute="centerY" secondItem="LN4-n9-9TJ" secondAttribute="centerY" id="lRg-kI-i6r"/>
                             <constraint firstItem="oK9-Gi-qk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m9a-Bc-vDg"/>
                             <constraint firstItem="zCh-wv-Dhj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="pCF-Mc-c6c"/>
                             <constraint firstItem="3J8-QY-Mc6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="plU-MQ-lgK"/>
                             <constraint firstItem="hqr-jc-DU1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pur-B0-FyW"/>
+                            <constraint firstItem="oK9-Gi-qk5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="syW-mz-UTj"/>
+                            <constraint firstItem="oK9-Gi-qk5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="tzo-V8-I8B"/>
                             <constraint firstItem="cnz-h1-adD" firstAttribute="leading" secondItem="zCh-wv-Dhj" secondAttribute="trailing" constant="10" id="u6T-UQ-HAq"/>
+                            <constraint firstItem="hqr-jc-DU1" firstAttribute="top" secondItem="cnz-h1-adD" secondAttribute="bottom" constant="10" id="wDp-in-TpE"/>
                             <constraint firstItem="Gwv-uN-u6g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="x0L-Zb-Sg7"/>
                             <constraint firstItem="hqr-jc-DU1" firstAttribute="leading" secondItem="LN4-n9-9TJ" secondAttribute="trailing" constant="40" id="xaa-4v-gGq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hSj-A4-SmD" secondAttribute="trailing" constant="10" id="zVZ-rC-IWZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qsa-Dg-YiL"/>
+                                <exclude reference="bu4-hv-KEv"/>
+                                <exclude reference="syW-mz-UTj"/>
+                                <exclude reference="tzo-V8-I8B"/>
+                                <exclude reference="i7p-al-1lI"/>
+                                <exclude reference="wDp-in-TpE"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="IHb-oF-ZNE"/>
+                                <include reference="Qsa-Dg-YiL"/>
+                                <include reference="bu4-hv-KEv"/>
+                                <exclude reference="m9a-Bc-vDg"/>
+                                <include reference="syW-mz-UTj"/>
+                                <include reference="tzo-V8-I8B"/>
+                                <exclude reference="5ra-GT-GxZ"/>
+                                <exclude reference="Mjq-SP-mt5"/>
+                                <exclude reference="aHW-eB-AE9"/>
+                                <include reference="i7p-al-1lI"/>
+                                <include reference="wDp-in-TpE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Vodeo Player" id="gjP-lI-t75"/>
                     <connections>
                         <outlet property="currentTimeLabel" destination="zCh-wv-Dhj" id="VKC-jO-BoJ"/>
+                        <outlet property="forwardButton" destination="vr5-4F-xbd" id="tu5-Ni-6jJ"/>
+                        <outlet property="fullScreenButton" destination="jnA-61-nYC" id="lIT-Nx-vMQ"/>
+                        <outlet property="muteButton" destination="HdN-JD-GMY" id="Nqf-wc-gaJ"/>
+                        <outlet property="noVideoLabel" destination="3J8-QY-Mc6" id="mvg-MJ-U25"/>
                         <outlet property="playButton" destination="hqr-jc-DU1" id="4Ey-JK-bOV"/>
+                        <outlet property="rewindButton" destination="LN4-n9-9TJ" id="wNY-4w-WJa"/>
                         <outlet property="searchButton" destination="hSj-A4-SmD" id="BNF-Fe-53u"/>
                         <outlet property="timeSlider" destination="cnz-h1-adD" id="cyG-Nm-wYh"/>
                         <outlet property="totalTimeLabel" destination="Gjy-CR-Q7D" id="nfT-K4-t3z"/>
@@ -179,7 +223,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Add-4H-rN2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EBH-dI-MUF">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -200,13 +244,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_fullScreen" width="12" height="12"/>
-        <image name="btn_fullScreen_exit" width="12" height="12"/>
-        <image name="btn_play" width="12" height="12"/>
-        <image name="btn_play_forward" width="12" height="12"/>
-        <image name="btn_play_rewind" width="12" height="12"/>
-        <image name="btn_stop" width="12" height="12"/>
-        <image name="btn_volume_off" width="12" height="12"/>
-        <image name="btn_volume_up" width="12" height="12"/>
+        <image name="btn_fullScreen" width="21" height="21"/>
+        <image name="btn_fullScreen_exit" width="21" height="21"/>
+        <image name="btn_play" width="21" height="21"/>
+        <image name="btn_play_forward" width="21" height="21"/>
+        <image name="btn_play_rewind" width="21" height="21"/>
+        <image name="btn_stop" width="21" height="21"/>
+        <image name="btn_volume_off" width="21" height="21"/>
+        <image name="btn_volume_up" width="21" height="21"/>
     </resources>
 </document>

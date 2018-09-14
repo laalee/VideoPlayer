@@ -16,6 +16,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var playButton: UIButton!
     
+    @IBOutlet weak var rewindButton: UIButton!
+    
+    @IBOutlet weak var forwardButton: UIButton!
+    
+    @IBOutlet weak var muteButton: UIButton!
+    
+    @IBOutlet weak var fullScreenButton: UIButton!
+    
     @IBOutlet weak var currentTimeLabel: UILabel!
     
     @IBOutlet weak var totalTimeLabel: UILabel!
@@ -25,6 +33,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeSlider: UISlider!
     
     @IBOutlet weak var searchButton: UIButton!
+    
+    @IBOutlet weak var noVideoLabel: UILabel!
     
     var avPlayer: AVPlayer?
     
@@ -50,6 +60,39 @@ class ViewController: UIViewController {
         caDisplayLink.add(to: .main, forMode: .defaultRunLoopMode)
         
         setSliderTouchEvents()
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animate(alongsideTransition: { context in
+            
+            if UIApplication.shared.statusBarOrientation.isLandscape {
+                
+                self.navigationController?.setNavigationBarHidden(true, animated: false)
+                
+                self.videoView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                
+                self.noVideoLabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                
+                self.setButtonColor(with: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+                
+                self.setLabelColor(with: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+                
+            } else {
+                
+                self.navigationController?.setNavigationBarHidden(false, animated: false)
+                
+                self.videoView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                
+                self.noVideoLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                
+                self.setButtonColor(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+                
+                self.setLabelColor(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+            }
+        })
+        
+        fullScreenButton.isSelected = !fullScreenButton.isSelected
     }
     
     @IBAction func searchUrl(_ sender: UIButton) {
@@ -197,6 +240,48 @@ class ViewController: UIViewController {
         let time: CMTime = CMTimeMake(Int64(newTime), 1)
 
         player.seek(to: time)
+    }
+    
+    @IBAction func switchOrientation(_ sender: UIButton) {
+        
+        print("switchOrientation")
+        
+        UIView.setAnimationsEnabled(false)
+
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+
+        } else {
+            
+            UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        }
+        
+        UIView.setAnimationsEnabled(true)
+    }
+    
+    func setButtonColor(with color: UIColor) {
+        
+        let buttons: [UIButton] = [playButton, rewindButton, forwardButton, muteButton, fullScreenButton]
+        
+        for button in buttons {
+            
+            let templateImage = button.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            
+            button.imageView?.image = templateImage
+            
+            button.imageView?.tintColor = color
+        }
+    }
+    
+    func setLabelColor(with color: UIColor) {
+        
+        let labels: [UILabel] = [currentTimeLabel, totalTimeLabel]
+        
+        for label in labels {
+            
+            label.textColor = color
+        }
     }
 
 }
