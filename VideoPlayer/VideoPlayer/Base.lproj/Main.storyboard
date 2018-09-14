@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Add-4H-rN2">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,17 +16,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://s3-ap-northeast-1.amazonaws.com/mid-exam/Video/taeyeon.mp4" borderStyle="roundedRect" placeholder="請輸入欲播放影片網址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gwv-uN-u6g">
-                                <rect key="frame" x="10" y="79" width="220" height="30"/>
+                                <rect key="frame" x="10" y="59" width="636" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSj-A4-SmD">
-                                <rect key="frame" x="240" y="79" width="70" height="30"/>
+                                <rect key="frame" x="656" y="59" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="gJ1-k1-Vxw"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oK9-Gi-qk5">
-                                <rect key="frame" x="0.0" y="194" width="320" height="180"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oK9-Gi-qk5" secondAttribute="height" multiplier="16:9" id="39l-V3-uI9"/>
                                 </constraints>
@@ -54,23 +54,23 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前尚無影片可播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J8-QY-Mc6">
-                                <rect key="frame" x="82" y="273.5" width="156" height="21"/>
+                                <rect key="frame" x="290" y="196.66666666666666" width="156" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-h1-adD">
-                                <rect key="frame" x="57" y="454" width="206" height="31"/>
+                                <rect key="frame" x="57" y="340" width="622" height="31"/>
                                 <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCh-wv-Dhj">
-                                <rect key="frame" x="10" y="461" width="39" height="17"/>
+                                <rect key="frame" x="10" y="347" width="39" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-JD-GMY">
-                                <rect key="frame" x="20" y="514" width="24" height="24"/>
+                                <rect key="frame" x="228" y="380" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="PQA-bX-1wU"/>
                                     <constraint firstAttribute="width" constant="24" id="TBs-ym-nCO"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN4-n9-9TJ">
-                                <rect key="frame" x="84" y="514" width="24" height="24"/>
+                                <rect key="frame" x="292" y="380" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="P31-gw-XdS"/>
                                     <constraint firstAttribute="width" constant="24" id="zJ9-Gz-8fY"/>
@@ -93,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-jc-DU1">
-                                <rect key="frame" x="148" y="514" width="24" height="24"/>
+                                <rect key="frame" x="356" y="380" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="HRI-rA-2wx"/>
                                     <constraint firstAttribute="width" constant="24" id="I2V-7H-4yr"/>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr5-4F-xbd">
-                                <rect key="frame" x="212" y="514" width="24" height="24"/>
+                                <rect key="frame" x="420" y="380" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Td1-99-TbE"/>
                                     <constraint firstAttribute="width" constant="24" id="V55-tG-OKP"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnA-61-nYC">
-                                <rect key="frame" x="276" y="514" width="24" height="24"/>
+                                <rect key="frame" x="484" y="380" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1Ij-p7-SYz"/>
                                     <constraint firstAttribute="height" constant="24" id="wSw-Pn-QuQ"/>
@@ -128,7 +128,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-CR-Q7D">
-                                <rect key="frame" x="271" y="461" width="39" height="17"/>
+                                <rect key="frame" x="687" y="347" width="39" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -223,7 +223,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Add-4H-rN2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EBH-dI-MUF">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.24705882352941178" green="0.31764705882352939" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -244,13 +244,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btn_fullScreen" width="12" height="12"/>
-        <image name="btn_fullScreen_exit" width="12" height="12"/>
-        <image name="btn_play" width="12" height="12"/>
-        <image name="btn_play_forward" width="12" height="12"/>
-        <image name="btn_play_rewind" width="12" height="12"/>
-        <image name="btn_stop" width="12" height="12"/>
-        <image name="btn_volume_off" width="12" height="12"/>
-        <image name="btn_volume_up" width="12" height="12"/>
+        <image name="btn_fullScreen" width="21" height="21"/>
+        <image name="btn_fullScreen_exit" width="21" height="21"/>
+        <image name="btn_play" width="21" height="21"/>
+        <image name="btn_play_forward" width="21" height="21"/>
+        <image name="btn_play_rewind" width="21" height="21"/>
+        <image name="btn_stop" width="21" height="21"/>
+        <image name="btn_volume_off" width="21" height="21"/>
+        <image name="btn_volume_up" width="21" height="21"/>
     </resources>
 </document>

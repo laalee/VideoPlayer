@@ -48,6 +48,8 @@ class ViewController: UIViewController {
     
     let seekDuration: Float64 = 10
     
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,6 +64,45 @@ class ViewController: UIViewController {
         caDisplayLink.add(to: .main, forMode: .defaultRunLoopMode)
         
         setSliderTouchEvents()
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showButtons))
+        self.view.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func showButtons() {
+        
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+            
+            playButton.isHidden = !playButton.isHidden
+            
+            rewindButton.isHidden = !rewindButton.isHidden
+            
+            forwardButton.isHidden = !forwardButton.isHidden
+            
+            muteButton.isHidden = !muteButton.isHidden
+            
+            fullScreenButton.isHidden = !fullScreenButton.isHidden
+            
+            timer?.invalidate()
+            
+            if !playButton.isHidden {
+                timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector:#selector(self.tickDown), userInfo: nil, repeats: false)
+                
+            }
+        }
+    }
+    
+    @objc func tickDown() {
+        
+        playButton.isHidden = !playButton.isHidden
+        
+        rewindButton.isHidden = !rewindButton.isHidden
+        
+        forwardButton.isHidden = !forwardButton.isHidden
+        
+        muteButton.isHidden = !muteButton.isHidden
+        
+        fullScreenButton.isHidden = !fullScreenButton.isHidden
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -91,6 +132,8 @@ class ViewController: UIViewController {
                 self.setButtonColor(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
                 
                 self.setLabelColor(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+                
+                self.timer?.invalidate()
             }
         })
 
@@ -106,8 +149,6 @@ class ViewController: UIViewController {
             self.avPlayerLayer.frame.size = self.videoView.frame.size
         })
     }
-    
-    
     
     @IBAction func searchUrl(_ sender: UIButton) {
         
